@@ -12,15 +12,15 @@ import br.com.rabbitmq.producer.api.dto.input.MessageInput;
 import br.com.rabbitmq.producer.service.AmpqService;
 
 @RestController
-@RequestMapping("api/v1/ampq")
+@RequestMapping("api/v1/amqp")
 public class AmpqController {
 
 	@Autowired
-	private AmpqService ampqService;
+	private AmpqService amqpService;
 	
 	@ResponseStatus(HttpStatus.ACCEPTED)
 	@PostMapping("send")
 	public void send(@RequestBody MessageInput message) {
-		ampqService.sendToConsumer(message);
+		amqpService.sendToConsumer(message);
 	}
 }
