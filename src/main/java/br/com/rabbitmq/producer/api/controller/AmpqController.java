@@ -23,4 +23,10 @@ public class AmpqController {
 	public void send(@RequestBody MessageInput message) {
 		amqpService.sendToConsumer(message);
 	}
+	
+	@ResponseStatus(HttpStatus.ACCEPTED)
+	@PostMapping("send-second")
+	public void send(@RequestBody String message) {
+		amqpService.sendToConsumer(message);
+	}
 }

@@ -12,7 +12,13 @@ import lombok.Setter;
 @ConfigurationProperties("producer.rabbitmq")
 public class ProducerRabbitMQProperties {
 
-	private String exchange="";
-	private String routingKey="";
-	private String deadLetter="";
+	private String directExchangeTest="";
+	//Queues
+	private String queueNameFirst="";
+	private String routingKeyFirst="";
+	private String deadLetterFirst="";
+	
+	private String queueNameSecond="";
+	private String routingKeySecond="";
+	private String deadLetterSecond="";
 }

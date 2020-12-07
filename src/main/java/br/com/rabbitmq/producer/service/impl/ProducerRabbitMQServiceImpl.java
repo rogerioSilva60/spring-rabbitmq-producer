@@ -11,11 +11,18 @@ import br.com.rabbitmq.producer.service.AmpqService;
 public class ProducerRabbitMQServiceImpl implements AmpqService {
 
 	@Autowired
-	private ProducerAmqp<MessageInput> amqp;
+	private ProducerAmqp<MessageInput> amqpMessageInput;
+	@Autowired
+	private ProducerAmqp<String> amqpString;
 	
 	@Override
 	public void sendToConsumer(MessageInput message) {
-		amqp.producer(message);
+		amqpMessageInput.producer(message);
+	}
+
+	@Override
+	public void sendToConsumer(String message) {
+		amqpString.producer(message);
 	}
 
 }
