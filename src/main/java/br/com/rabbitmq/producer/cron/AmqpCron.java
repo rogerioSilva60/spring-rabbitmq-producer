@@ -22,16 +22,10 @@ public class AmqpCron {
 	
 	private List<String> fakeList() {
 		List<String> list = new ArrayList<>();
-		list.add("Mensagem 1...");
-		list.add("Mensagem 2...");
-		list.add("Mensagem 3...");
-		list.add("Mensagem 4...");
-		list.add("Mensagem 5...");
-		list.add("Mensagem 6...");
-		list.add("Mensagem 7...");
-		list.add("Mensagem 8...");
-		list.add("Mensagem 9...");
-		list.add("Mensagem 10...");
+		for(int i=1; i <= 100; i++) {
+			list.add("Mensagem " + i +"...");
+		}
+		list.add("---------------");
 		return list;
 	}
 }
