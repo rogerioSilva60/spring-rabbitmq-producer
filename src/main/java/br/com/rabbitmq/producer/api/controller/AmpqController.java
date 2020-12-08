@@ -9,14 +9,14 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
 import br.com.rabbitmq.producer.api.dto.input.MessageInput;
-import br.com.rabbitmq.producer.service.AmpqService;
+import br.com.rabbitmq.producer.service.AmqpService;
 
 @RestController
 @RequestMapping("api/v1/amqp")
 public class AmpqController {
 
 	@Autowired
-	private AmpqService amqpService;
+	private AmqpService amqpService;
 	
 	@ResponseStatus(HttpStatus.ACCEPTED)
 	@PostMapping("send")

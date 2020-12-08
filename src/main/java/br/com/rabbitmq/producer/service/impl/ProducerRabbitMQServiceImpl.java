@@ -1,14 +1,16 @@
 package br.com.rabbitmq.producer.service.impl;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import br.com.rabbitmq.producer.api.dto.input.MessageInput;
 import br.com.rabbitmq.producer.core.amqp.ProducerAmqp;
-import br.com.rabbitmq.producer.service.AmpqService;
+import br.com.rabbitmq.producer.service.AmqpService;
 
 @Service
-public class ProducerRabbitMQServiceImpl implements AmpqService {
+public class ProducerRabbitMQServiceImpl implements AmqpService {
 
 	@Autowired
 	private ProducerAmqp<MessageInput> amqpMessageInput;
@@ -23,6 +25,11 @@ public class ProducerRabbitMQServiceImpl implements AmpqService {
 	@Override
 	public void sendToConsumer(String message) {
 		amqpString.producer(message);
+	}
+
+	@Override
+	public void sendToConsumer(List<String> messages) {
+		messages.forEach(message -> amqpString.producer(message));
 	}
 
 }
