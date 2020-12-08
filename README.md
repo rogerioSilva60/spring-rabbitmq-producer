@@ -19,7 +19,7 @@ docker run -d -p 15672:15672 -p 5672:5672 --name rabbitmq rabbitmq:3-management
 
 ## Documentação
 
-Basta acessar a url: http://localhost:8080/swagger-ui.html#/ na máquina que esteja executando o projeto e terá a documentação da api pelo Swagger.
+Basta acessar a url: http://localhost:8081/swagger-ui.html#/ na máquina que esteja executando o projeto e terá a documentação da api pelo Swagger.
 
 ![spring-rabbitmq-producer](https://user-images.githubusercontent.com/23174611/101501076-0c358b00-394e-11eb-8805-cfb2cdabe8a7.png)
 
